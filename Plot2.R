@@ -14,7 +14,9 @@ HousePC$Sub_metering_1 = as.numeric(as.character(HousePC$Sub_metering_1))
 HousePC$Sub_metering_2 = as.numeric(as.character(HousePC$Sub_metering_2))
 HousePC$Sub_metering_3 = as.numeric(as.character(HousePC$Sub_metering_3))
 
-png("Plot2.png")
+
 plot(HousePC$Date,HousePC$Global_active_power, type = "l",
      xlab = "Date", ylab =  "Global Active Power", main = "Global Active Power 2")
+
+dev.copy(png, file="Plot2.png", height=480, width=480)
 dev.off()

@@ -15,8 +15,6 @@ HousePC$Sub_metering_2 = as.numeric(as.character(HousePC$Sub_metering_2))
 HousePC$Sub_metering_3 = as.numeric(as.character(HousePC$Sub_metering_3))
 
 
-png("Plot3.png")
-
 plot(HousePC$Date,HousePC$Sub_metering_1, type = "n", 
      xlab = "Date", ylab =  "Energy Sub Metering", main = "Sub Meterings")
 with(HousePC,lines(Date,Sub_metering_1, type = "l", col = "black"))
@@ -26,4 +24,5 @@ with(HousePC,lines(Date,Sub_metering_3, type = "l", col = "green"))
 legend("topright", lty = 1, col = c("black","red","green"), 
        legend=c("SM 1", "SM 2", "SM 3"))
 
+dev.copy(png, file="Plot3.png", height=480, width=480)
 dev.off()

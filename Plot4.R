@@ -14,9 +14,6 @@ HousePC$Sub_metering_1 = as.numeric(as.character(HousePC$Sub_metering_1))
 HousePC$Sub_metering_2 = as.numeric(as.character(HousePC$Sub_metering_2))
 HousePC$Sub_metering_3 = as.numeric(as.character(HousePC$Sub_metering_3))
 
-
-png("Plot4.png")
-
 par(mfrow=c(2,2))
 
 with(HousePC,
@@ -36,7 +33,8 @@ with(HousePC,
             xlab = "Date", ylab =  "Global Reactive Power", main = "Reactive Power")
      }
 )
-dev.off()
 
+dev.copy(png, file="plot1.png", height=480, width=480)
+dev.off()
 
 

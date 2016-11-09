@@ -14,7 +14,9 @@ HousePC$Sub_metering_1 = as.numeric(as.character(HousePC$Sub_metering_1))
 HousePC$Sub_metering_2 = as.numeric(as.character(HousePC$Sub_metering_2))
 HousePC$Sub_metering_3 = as.numeric(as.character(HousePC$Sub_metering_3))
 
-png("Plot1.png")
+
 hist(HousePC$Global_active_power, col = "red", xlab = "Global Active Power (killowats)", 
      main = "Global Active Power")
+
+dev.copy(png, file="Plot1.png", height=480, width=480)
 dev.off()
